@@ -38,6 +38,7 @@ module.exports.loginAccount = async (req, res)=>{
    if(isUser){
       //all work and start to login the account to session!
       req.session.user = isUser;
+      console.log("The account " + req.session.user.userName + " online on the website!");
       res.redirect("/");
    }
    else{
