@@ -12,5 +12,9 @@
       <form action="logout" method="post">
          <input id="logoutButton" type="submit" value="Logout">
       </form>
+
+      <% if (user.isAdmin === true) { %>
+       <p>this is admin!</p>
+      <% } %>
    </body>
 </html>
