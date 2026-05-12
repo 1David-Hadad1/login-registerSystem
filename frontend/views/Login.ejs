@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Login Page</title>
+      <link rel="stylesheet" href="Login.css">
+   </head>
+
+   <body>
+
+      <form class="login-con" action="login" method="post">
+         <div class="login-blok">
+            <h1>Login</h1>
+            <div><p>User Email:</p><input type="email" name="useremail" required></div>
+            <div><p>User Password:</p><input type="password" name="userpassword" required></div>
+            <tologin id="to-login-text"><p>I want to create one! </p><a href="/register">register</a></tologin>
+            <% if (errorMessage) { %>
+               <errorMessage><p><%= errorMessage %></p></errorMessage>
+            <% } %>
+            <input id="submit-input-login" type="submit" value="Login">
+         </div>
+      </form>
+
+   </body>
+</html>

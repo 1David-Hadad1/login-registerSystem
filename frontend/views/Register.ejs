@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Register Page</title>
+      <link rel="stylesheet" href="Register.css">
+   </head>
+
+   <body>
+      <form class="register-con" action="register" method="post">
+         <div class="register-blok">
+            <h1>Register</h1>
+            <div><p>User Name:</p><input type="text" name="username" required></div>
+            <div><p>User Email:</p><input type="email" name="useremail" required></div>
+            <div><p>User Password:</p><input type="password" name="userpassword" required></div>
+            <div><p>User Repassword:</p><input type="password" name="userrepassword" required></div>
+            <tologin id="to-login-text"><p>I allredy have account! </p><a href="/login">login</a></tologin>
+            <% if (errorMessage) { %>
+               <errorMessage><p><%= errorMessage %></p></errorMessage>
+            <% } %>
+            <input id="submit-input-register" type="submit" value="Create Account">
+         </div>
+      </form>
+   </body>
+</html>
