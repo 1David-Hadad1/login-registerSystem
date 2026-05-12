@@ -5,6 +5,21 @@ module.exports.registerAccount = async (req, res)=>{
 
       if(req.body.userpassword.length > 8){
 
+         const emailChack = await userSchema.findOne({userEmail: req.body.useremail});
+         const userNameChack = await userSchema.findOne({userName: req.body.username});
+
+         if(emailChack){
+            return res.render("../frontend/views/Register.ejs", {
+               errorMessage: "The email are allredy taken!"
+            });
+         }
+
+         if(userNameChack){
+            return res.render("../frontend/views/Register.ejs", {
+               errorMessage: "The userName are allredy taken!"
+            });
+         }
+
          const newUser = await userSchema.create({
             userName: req.body.username,
             userEmail: req.body.useremail,
@@ -13,7 +28,7 @@ module.exports.registerAccount = async (req, res)=>{
 
          newUser.save().then(()=>{//the account are created!
             req.session.user = newUser;
-            console.log("the account are created!");
+            console.log("the account are created! " + newUser.userName);
             res.redirect("/");
          });
       }
