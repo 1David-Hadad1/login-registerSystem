@@ -9,6 +9,10 @@ html, body{
    overflow: hidden;
    touch-action: none;
 }
+#root, .app, .main-container{
+   height: 100%;
+   background: linear-gradient(135deg, #183771, #3f63a0);
+}
 
 .register-con{
    display: flex;
