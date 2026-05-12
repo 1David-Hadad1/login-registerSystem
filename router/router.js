@@ -4,6 +4,8 @@ const router = express.Router();
 const userController = require("../controllers/userController");
 
 const pagesAuth = require("../middleware/pagesAuth");
+const adminAuth = require("../middleware/adminAuth");
+
 const session = require("express-session");
 
 router.get("/", pagesAuth, (req, res)=>{
@@ -21,6 +23,10 @@ router.get("/login", (req, res)=>{
    res.render("../frontend/views/Login.ejs", {
       errorMessage: null
    });
+});
+
+router.get("/Admin", adminAuth, pagesAuth, (req, res)=>{
+   res.render("../frontend/views/Admin.ejs");
 });
 
 router.post("/register", (req, res)=>{
