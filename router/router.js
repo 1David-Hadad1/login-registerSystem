@@ -7,6 +7,7 @@ const pagesAuth = require("../middleware/pagesAuth");
 const adminAuth = require("../middleware/adminAuth");
 
 const session = require("express-session");
+const userSchema = require("../models/userSchema");
 
 router.get("/", pagesAuth, (req, res)=>{
    const user = req.session.user;
@@ -25,8 +26,10 @@ router.get("/login", (req, res)=>{
    });
 });
 
-router.get("/Admin", adminAuth, pagesAuth, (req, res)=>{
-   res.render("../frontend/views/Admin.ejs");
+router.get("/Admin", adminAuth, pagesAuth, async (req, res)=>{
+   const user = req.session.user;
+   const allusers = await userSchema.find({});
+   res.render("../frontend/views/Admin.ejs", {user, allusers});
 });
 
 router.post("/register", (req, res)=>{
@@ -39,7 +42,7 @@ router.post("/login", (req, res)=>{
 
 router.post("/logout", (req, res)=>{
    req.session.destroy(session.user);
-   res.redirect("/register");
+   res.redirect("/login");
 });
 
 module.exports = router;

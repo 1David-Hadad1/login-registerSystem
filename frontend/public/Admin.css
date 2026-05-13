@@ -7,4 +7,40 @@ html, body{
    background: linear-gradient(135deg, #183771, #3f63a0);
    touch-action: none;
    overflow: hidden;
+   width: 100vw;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+
+.users-table-con{
+   width: fit-content;
+   margin: 50px;
+}
+.users-table-row{
+   background-color: rgba(255, 255, 255, 0.2);
+}
+.users-table-row, .users-table-row-title{
+   display: flex;
+}
+.users-table-row p, .users-table-row-title p{
+   border: 1px solid black;
+   padding: 10px;
+   text-align: center;
+}
+.users-table-row p:nth-child(1), .users-table-row-title p:nth-child(1){
+   width: 200px;
+}
+.users-table-row p:nth-child(2), .users-table-row-title p:nth-child(2){
+   width: 300px;
+}
+.users-table-row p:nth-child(3), .users-table-row-title p:nth-child(3){
+   width: 100px;
+}
+.users-table-row-title{
+   background-color: rgba(255, 255, 255, 0.5);
+}
+.users-table-row-title p{
+   font-weight: bold;
 }

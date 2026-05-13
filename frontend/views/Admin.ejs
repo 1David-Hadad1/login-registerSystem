@@ -8,6 +8,23 @@
    </head>
 
    <body>
-      <h1>this is the admin panel</h1>
+      <h1>Admin Panel: <%= user.userName %></h1>
+
+      <div class="users-table-con">
+         <div class="users-table-row-title">
+            <p>UserName</p>
+            <p>UserEmail</p>
+            <p>IsAdmin?</p>
+         </div>
+
+         <% allusers.forEach(usersData => { %>
+            <div class="users-table-row">
+               <p><%= usersData.userName %></p>
+               <p><%= usersData.userEmail %></p>
+               <p><%= usersData.isAdmin %></p>
+            </div>
+         <% }) %>
+      </div>
+
    </body>
 </html>
