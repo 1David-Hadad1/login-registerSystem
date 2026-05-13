@@ -44,3 +44,35 @@ html, body{
 .users-table-row-title p{
    font-weight: bold;
 }
+
+@media (max-width: 630px) {
+   .users-table-row p, .users-table-row-title p{
+      font-size: 13px;
+   }
+
+   .users-table-row p:nth-child(1), .users-table-row-title p:nth-child(1){
+      width: 180px;
+   }
+   .users-table-row p:nth-child(2), .users-table-row-title p:nth-child(2){
+      width: 200px;
+   }
+   .users-table-row p:nth-child(3), .users-table-row-title p:nth-child(3){
+      width: 100px;
+   }
+}
+
+@media (max-width: 490px) {
+   .users-table-row p, .users-table-row-title p{
+      font-size: 10px;
+   }
+
+   .users-table-row p:nth-child(1), .users-table-row-title p:nth-child(1){
+      width: 125px;
+   }
+   .users-table-row p:nth-child(2), .users-table-row-title p:nth-child(2){
+      width: 160px;
+   }
+   .users-table-row p:nth-child(3), .users-table-row-title p:nth-child(3){
+      width: 70px;
+   }
+}
