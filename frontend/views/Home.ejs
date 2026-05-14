@@ -5,16 +5,22 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Home Page</title>
       <link rel="stylesheet" href="Home.css">
+      <link rel="stylesheet" href="Parts/Header/Header.css">
    </head>
    <body>
-      <h1>Welcome! <%= user.userName %></h1>
+      <%- include('../views/Parts/Header/Header.ejs') %>
 
-      <form action="logout" method="post">
-         <input id="logoutButton" type="submit" value="Logout">
-      </form>
+      <div id="This-Body">
+         <h1>Welcome! <%= user.userName %></h1>
 
-      <% if (user.isAdmin === true) { %>
-       <p>this is admin! <a href="/Admin">Admin Panel</a></p>
-      <% } %>
+         <form action="logout" method="post">
+            <input id="logoutButton" type="submit" value="Logout">
+         </form>
+
+         <% if (user.isAdmin === true) { %>
+         <p>this is admin! <a href="/Admin">Admin Panel</a></p>
+         <% } %>
+      </div>
+
    </body>
 </html>

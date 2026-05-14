@@ -5,25 +5,32 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Admin Panel</title>
       <link rel="stylesheet" href="Admin.css">
+      <link rel="stylesheet" href="./Parts/Header/Header.css">
    </head>
 
    <body>
-      <h1>Admin Panel: <%= user.userName %></h1>
+      <%- include('./Parts/Header/Header.ejs') %>
 
-      <div class="users-table-con">
-         <div class="users-table-row-title">
-            <p>UserName</p>
-            <p>UserEmail</p>
-            <p>IsAdmin?</p>
+      <div id="This-Body">
+
+         <h1>Admin Panel: <%= user.userName %></h1>
+
+         <div class="users-table-con">
+            <div class="users-table-row-title">
+               <p>UserName</p>
+               <p>UserEmail</p>
+               <p>IsAdmin?</p>
+            </div>
+
+            <% allusers.forEach(usersData => { %>
+               <div class="users-table-row">
+                  <p><%= usersData.userName %></p>
+                  <p><%= usersData.userEmail %></p>
+                  <p><%= usersData.isAdmin %></p>
+               </div>
+            <% }) %>
          </div>
 
-         <% allusers.forEach(usersData => { %>
-            <div class="users-table-row">
-               <p><%= usersData.userName %></p>
-               <p><%= usersData.userEmail %></p>
-               <p><%= usersData.isAdmin %></p>
-            </div>
-         <% }) %>
       </div>
 
    </body>

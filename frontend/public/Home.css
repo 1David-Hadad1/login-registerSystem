@@ -15,7 +15,13 @@ html, body{
    touch-action: none;
    overflow: hidden;
 }
-
+#This-Body{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   gap: 10px;
+}
 #logoutButton{
    background:linear-gradient(135deg, rgb(255, 45, 45), rgb(255, 88, 88));
    border: 1px solid white;

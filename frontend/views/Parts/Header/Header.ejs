@@ -1,0 +1,28 @@
+<div id="Header-Body">
+
+   <div class="header-con">
+      <a href="Home.html" id="header-left-title">GymPlaner</a>
+
+      <div class="Humburger-Con" onclick="OpenAndCloseMenu()">
+         <div class="row1"></div>
+         <div class="row2"></div>
+         <div class="row3"></div>
+      </div>
+   </div>
+
+</div>
+
+<div id="Menu-Body" style="display: none;">
+   <div class="navbar-menu">
+      <a href="/">בית</a>
+      <a href="">פרופיל</a>
+      <a href="">הוספת תרגיל</a>
+      <a href="">התחלת אימון</a>
+      
+      <% if (user.isAdmin === true) { %>
+         <a href="/Admin">Admin</a>
+      <% } %>
+   </div>
+</div>
+
+<script src="Parts/Header/Header.js"></script>

@@ -1,0 +1,73 @@
+*{
+   margin: 0px;padding: 0px;box-sizing: border-box;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+   min-height: 100vh;
+   background: linear-gradient(135deg, #183771, #3f63a0);
+}
+
+.header-con{
+   background-color: rgba(255, 255, 255, 0.1);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px 25px;
+   position: fixed;
+   width: 100%;
+   top: 0px;
+   left: 0px;
+}
+#header-left-title{
+   text-decoration: none;
+   color: rgba(0, 0, 0, 0.6);
+   font-weight: bolder;
+   font-size: 23px;
+}
+
+.Humburger-Con{
+   width: 35px;
+   height: 25px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+}
+.row1, .row2, .row3{
+   width: 100%;
+   height: 6px;
+   background-color: rgba(0, 0, 0, 0.5);
+   border-radius: 10px;
+}
+.Humburger-Con:hover{
+   cursor: pointer;
+}
+
+#Menu-Body{
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+.navbar-menu{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: 100%;
+   width: 100%;
+}
+.navbar-menu a{
+   text-decoration: none;
+   color: white;
+   width: 100%;
+   text-align: center;
+   padding: 20px;
+}
+.navbar-menu a:hover{
+   background-color: rgba(0, 0, 0, 0.05);
+   cursor: pointer;
+}
