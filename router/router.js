@@ -32,6 +32,11 @@ router.get("/Admin", adminAuth, pagesAuth, async (req, res)=>{
    res.render("../frontend/views/Admin.ejs", {user, allusers});
 });
 
+router.get("/CreateWorkout", pagesAuth, async (req, res)=>{
+   const user = req.session.user;
+   res.render("../frontend/views/CreateWorkout.ejs", {user});
+});
+
 router.post("/register", (req, res)=>{
    userController.registerAccount(req, res);
 });

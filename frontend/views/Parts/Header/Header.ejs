@@ -1,7 +1,7 @@
 <div id="Header-Body">
 
    <div class="header-con">
-      <a href="Home.html" id="header-left-title">GymPlaner</a>
+      <a href="/" id="header-left-title">GymPlaner</a>
 
       <div class="Humburger-Con" onclick="OpenAndCloseMenu()">
          <div class="row1"></div>
@@ -16,12 +16,17 @@
    <div class="navbar-menu">
       <a href="/">בית</a>
       <a href="">פרופיל</a>
-      <a href="">הוספת תרגיל</a>
+      <a href="/CreateWorkout">יצירת אימון</a>
       <a href="">התחלת אימון</a>
       
       <% if (user.isAdmin === true) { %>
          <a href="/Admin">Admin</a>
       <% } %>
+
+      <form action="logout" method="post">
+         <input id="logoutButton-Menu" type="submit" value="התנתקות">
+      </form>
+
    </div>
 </div>
 

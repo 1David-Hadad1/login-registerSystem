@@ -13,12 +13,8 @@
       <div id="This-Body">
          <h1>Welcome! <%= user.userName %></h1>
 
-         <form action="logout" method="post">
-            <input id="logoutButton" type="submit" value="Logout">
-         </form>
-
          <% if (user.isAdmin === true) { %>
-         <p>this is admin! <a href="/Admin">Admin Panel</a></p>
+         <p>you are admin! <a href="/Admin">Admin Panel</a></p>
          <% } %>
       </div>
 
