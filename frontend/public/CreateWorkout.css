@@ -16,7 +16,7 @@ html, body{
    align-items: center;
    justify-content: center;
    flex-direction: column;
-   background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
+   background: linear-gradient(90deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.052));
    gap: 10px;
 }
 .workoutCreationCon .workouttitle{
@@ -60,4 +60,28 @@ html, body{
    width: 250px;
    height: 20px;
    margin-top: 2px;
+}
+#createWorkoutBtn{
+   width: 250px;
+   height: 25px;
+   margin-bottom: 10px;
+   font-size: 16px;
+   background-color: rgba(87, 121, 255, 0.7);
+   border: 2px solid black;
+}
+#createWorkoutBtn:hover{
+   background-color: rgba(87, 121, 255, 0.4);
+   cursor: pointer;
+}
+
+#addExercise{
+   width: 100px;
+   height: 25px;
+   background-color: rgba(87, 121, 255, 0.7);
+   border: 2px solid black;
+   font-size: 16px;
+}
+#addExercise:hover{
+   background-color: rgba(87, 121, 255, 0.4);
+   cursor: pointer;
 }
