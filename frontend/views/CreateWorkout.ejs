@@ -12,8 +12,20 @@
       <%- include('./Parts/Header/Header.ejs') %>
 
       <div id="This-Body">
-         <p>this is the create workout page!</p>
+         
+         <div id="exercise-con">
+            
+            <div class="Exercise">
+               <input type="text" name="exercise[]" placeholder="שם של התרגיל">
+               <input type="number" name="weight[]" placeholder="משקל">
+               <input type="number" name="reps[]" placeholder="חזרות">
+            </div>
+
+         </div>
+
+         <button id="addExercise">הוספת תרגיל</button>
       </div>
 
+      <script src="Scripts/CreateWorkout.js"></script>
    </body>
 </html>
