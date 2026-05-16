@@ -49,6 +49,11 @@ router.get("/startWorkout", pagesAuth, async (req, res)=>{
    res.render("../frontend/views/startWorkout.ejs", {workouts, user});
 });
 
+router.get("/workout/:id", pagesAuth, async (req,res)=>{
+   const workout = await workoutSchema.findById(req.params.id);   
+   res.render("../frontend/views/workoutPage.ejs", {workout});
+});
+
 router.post("/register", (req, res)=>{
    userController.registerAccount(req, res);
 });
