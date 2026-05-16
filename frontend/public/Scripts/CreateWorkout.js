@@ -4,10 +4,12 @@ console.log("this script is runing!");
 document.getElementById('addExercise').addEventListener("click", () =>{   
    exerciseCon.innerHTML += `
       <div class="Exercise">
-         <input type="text" name="exercise[]" placeholder="שם של התרגיל">
-         <input type="number" name="weight[]" placeholder="משקל">
-         <input type="number" name="reps[]" placeholder="חזרות">
-         <button type="button" class="delete-btn">מחק</button>
+            <input class="exerciseName" type="text" name="exercise[]" placeholder="שם של התרגיל">
+            <div>
+               <input type="number" name="weight[]" placeholder="משקל">
+               <input type="number" name="reps[]" placeholder="חזרות">
+            </div>
+         <button type="button" class="delete-btn">מחק תרגיל</button>
       </div>
    `
 });

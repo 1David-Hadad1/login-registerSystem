@@ -13,18 +13,27 @@
 
       <div id="This-Body">
          
-         <div id="exercise-con">
-            
-            <div class="Exercise">
-               <input type="text" name="exercise[]" placeholder="שם של התרגיל">
-               <input type="number" name="weight[]" placeholder="משקל">
-               <input type="number" name="reps[]" placeholder="חזרות">
-               <button type="button" class="delete-btn">מחק תרגיל</button>
+         <form class="workoutCreationCon" action="createWorkout" method="post">
+            <input class="workouttitle" type="text" name="workouttitle" placeholder="Title">
+
+            <div id="exercise-con">
+               
+               <div class="Exercise">
+                  <input class="exerciseName" type="text" name="exercise[]" placeholder="שם של התרגיל">
+                  <div>
+                     <input type="number" name="weight[]" placeholder="משקל">
+                     <input type="number" name="reps[]" placeholder="חזרות">
+                  </div>
+                  <button type="button" class="delete-btn">מחק תרגיל</button>
+               </div>
+
             </div>
 
-         </div>
+            <input type="button" value="הוספת תרגיל" id="addExercise">
+            <input type="submit" value="צור אימון" id="createWorkoutBtn">
 
-         <button id="addExercise">הוספת תרגיל</button>
+         </form>
+
       </div>
 
       <script src="Scripts/CreateWorkout.js"></script>

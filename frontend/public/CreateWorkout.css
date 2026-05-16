@@ -7,8 +7,59 @@ html, body{
    width: 100%;
    height: 100%;
    touch-action: none;
-   overflow: hidden;
+
 }
 #This-Body{
-   margin-top: 50px;
+   padding-top: 100px;
+   padding-bottom: 100px;
+}
+.workoutCreationCon{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
+   gap: 10px;
+}
+.workoutCreationCon .workouttitle{
+   width: 250px;
+   height: 25px;
+   font-size: 16px;
+   margin-top: 10px;
+}
+#exercise-con{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   gap: 10px;
+}
+.Exercise{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+.exerciseName{
+   width: 250px;
+   height: 25px;
+   font-size: 16px;
+   margin-top: 10px;
+}
+.Exercise div{
+   display: flex;
+   align-items: center;
+   width: 250px;
+   justify-content: space-between;
+}
+.Exercise div input{
+   height: 25px;
+   margin-top: 2px;
+   width: 120px;
+   text-align: center;
+}
+.Exercise .delete-btn{
+   width: 250px;
+   height: 20px;
+   margin-top: 2px;
 }
