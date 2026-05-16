@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="stylesheet" href="startWorkout.css">
+      <link rel="stylesheet" href="Parts/Header/Header.css">
+   </head>
+
+   <body>
+      <%- include('./Parts/Header/Header.ejs') %>
+
+      <div id="This-Body">
+
+         <div class="workouts-titles-con">
+            
+            <% workouts.forEach(workout => { %>
+             <a href="/workout/<%= workout._id %>">
+               <h1><%= workout.title %></h1>
+             </a>
+            <% }) %>
+
+         </div>
+
+      </div>
+   </body>
+</html>
