@@ -6,8 +6,6 @@ html, body{
    background: linear-gradient(135deg, #183771, #3f63a0);
    width: 100%;
    height: 100%;
-   touch-action: none;
-
 }
 #This-Body{
    padding-top: 100px;
