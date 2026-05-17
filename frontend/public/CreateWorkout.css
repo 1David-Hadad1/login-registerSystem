@@ -84,6 +84,9 @@ html, body{
    border: 2px solid black;
    font-size: 16px;
 }
+#addExercise input{
+   color: black;
+}
 #addExercise:hover{
    background-color: rgba(87, 121, 255, 0.4);
    cursor: pointer;
