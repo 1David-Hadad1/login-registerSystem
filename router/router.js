@@ -51,7 +51,8 @@ router.get("/startWorkout", pagesAuth, async (req, res)=>{
 
 router.get("/workout/:id", pagesAuth, async (req,res)=>{
    const workout = await workoutSchema.findById(req.params.id);   
-   res.render("../frontend/views/workoutPage.ejs", {workout});
+   const user = req.session.user;
+   res.render("../frontend/views/workoutPage.ejs", {workout, user});
 });
 
 router.post("/register", (req, res)=>{

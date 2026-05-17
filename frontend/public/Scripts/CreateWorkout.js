@@ -2,7 +2,8 @@ const exerciseCon = document.getElementById('exercise-con');
 console.log("this script is runing!");
 
 document.getElementById('addExercise').addEventListener("click", () =>{   
-   exerciseCon.innerHTML += `
+   const createRow = document.createElement("div");
+   createRow.innerHTML += `
       <div class="Exercise">
             <input class="exerciseName" type="text" name="exerciseName" placeholder="שם של התרגיל">
             <div>
@@ -12,6 +13,7 @@ document.getElementById('addExercise').addEventListener("click", () =>{
          <button type="button" class="delete-btn">מחק תרגיל</button>
       </div>
    `
+   exerciseCon.appendChild(createRow);
 });
 
 exerciseCon.addEventListener("click", (e) =>{

@@ -14,11 +14,14 @@
       <div id="This-Body">
 
          <div class="workouts-titles-con">
-            
+            <% if (workouts.length === 0) { %>
+               <p>אין לך עדין אימון בשביל ליצור אחד כנס <a href="/CreateWorkout">לכאן</a> </p>
+            <% } %>
+
             <% workouts.forEach(workout => { %>
-             <a href="/workout/<%= workout._id %>">
-               <h1><%= workout.title %></h1>
-             </a>
+               <a href="/workout/<%= workout._id %>">
+                  <h1><%= workout.title %></h1>
+               </a>
             <% }) %>
 
          </div>

@@ -3,11 +3,37 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
+      <title>Workout Page || <%= workout.title %></title>
+      <link rel="stylesheet" href="/workoutPage.css">
+      <link rel="stylesheet" href="/Parts/Header/Header.css">
    </head>
 
    <body>
-      <p>this is the workout page!</p>
-      <p>the work out call <%= workout.title %></p>
+      <%- include('./Parts/Header/Header.ejs') %>
+
+      <div id="This-Body">
+         <form action="/finish-workout" method="post">
+            <h1><%= workout.title %></h1>
+            <% workout.exercises.forEach(exercise => { %>
+               <div class="exerciesCon">
+                  <h2><%= exercise.name %></h2>
+                  <% exercise.sets.forEach((set, index) => { %>
+
+                     <div class="sets">
+                        <div class="set-row">
+                           <input type="number" name="weight" value="<%= set.weight %>" required>
+                           <input type="number" name="weight" value="<%= set.reps %>" required>
+                        </div>             
+                     </div>
+                  <% }) %>
+                  <input type="button" value="הוספת סט" class="addSetBtn">
+               </div>
+            <% }) %>
+
+         <input type="submit" value="סיים אימון">
+         </form>
+      </div>
+
+      <script src="/scripts/workoutPage.js"></script>
    </body>
 </html>
