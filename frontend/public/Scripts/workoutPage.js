@@ -18,7 +18,7 @@ addSetBtn.forEach(btn => {
          </div>
       `
 
-      exercise.appendChild(setRow);
+      setDiv.appendChild(setRow);
    });
 
    setDiv.addEventListener("click", (e) =>{

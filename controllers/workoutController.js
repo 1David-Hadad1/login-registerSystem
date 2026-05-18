@@ -1,6 +1,6 @@
 const workoutSchema = require("../models/workoutSchema");
 
-module.exports.createWorkout = async (req, res) =>{
+module.exports.createWorkout = async (req, res) =>{   
    if(!req.body.exerciseName){
       return console.log("you need to create exercuses!");
    }
@@ -30,7 +30,7 @@ module.exports.createWorkout = async (req, res) =>{
    workout.save();
 };
 
-module.exports.finishWorkout = async (req, res) => {
+module.exports.finishWorkout = async (req, res) => {   
    const updatedExercises = [];
 
    req.body.exercises.forEach(exercise => {

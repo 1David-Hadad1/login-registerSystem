@@ -70,7 +70,7 @@ router.post("/logout", (req, res)=>{
 
 router.post("/createWorkout", pagesAuth, async (req, res)=>{
    workoutController.createWorkout(req ,res);
-   res.redirect("/CreateWorkout");
+   res.redirect("/");
 });
 
 router.post("/Finish-Workout/:id", async (req,res)=>{
