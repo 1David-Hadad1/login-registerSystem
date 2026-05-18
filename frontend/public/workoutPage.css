@@ -5,3 +5,36 @@
 #This-Body{
    padding-top: 50px;
 }
+
+.workoutCon{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   width: 100vw;
+   gap: 15px;
+}
+.exerciesCon{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   width: 350px;
+   gap: 15px;
+}
+.sets{
+   display: flex;
+   gap: 10px;
+   flex-direction: column;
+   justify-content: space-between;
+}
+.sets div input{
+   width: 80px;
+   text-align: center;
+}
+.sets div{
+   display: flex;
+   align-items: center;
+   gap: 5px;
+   width: 250px;
+}

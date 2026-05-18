@@ -13,7 +13,7 @@
 
       <div id="This-Body">
 
-         <form action="/finish-workout/<%= workout._id %>" method="post">
+         <form class="workoutCon" action="/finish-workout/<%= workout._id %>" method="post">
 
             <h1><%= workout.title %></h1>
             
@@ -25,16 +25,17 @@
 
                   <input type="hidden" name="exercises[<%= exerciseIndex %>][name]" value="<%= exercise.name %>">
 
-                  <% exercise.sets.forEach((set, setIndex) => { %>
+                  <div class="sets">
+                     <% exercise.sets.forEach((set, setIndex) => { %>
 
-                     <div class="sets">
                         <div class="set-row">
                            <input type="number" name="exercises[<%= exerciseIndex %>][weight][]" value="<%= set.weight %>" required>
                            <input type="number" name="exercises[<%= exerciseIndex %>][reps][]" value="<%= set.reps %>" required>
                         </div>             
-                     </div>
+                        
 
-                  <% }) %>
+                     <% }) %>
+                  </div>
 
                   <input type="button" value="הוספת סט" class="addSetBtn">
 

@@ -44,7 +44,7 @@ module.exports.finishWorkout = async (req, res) => {
       };
 
       updatedExercises.push({
-         name: exercise.name[0],
+         name: exercise.name,
          sets: sets
       })
    });
