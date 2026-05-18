@@ -6,16 +6,19 @@ addSetBtn.forEach(btn => {
 
    btn.addEventListener("click", () =>{
       const setRow = document.createElement("div");
+
+      const exercise = btn.closest(".exerciesCon");
+      const exerciseIndex = exercise.dataset.index;
       
       setRow.innerHTML += `
          <div class="set-row">
-            <input type="number" name="weight" placeholder="weight" required>
-            <input type="number" name="reps" placeholder="reps" required>
+            <input type="number" name="exercises[${exerciseIndex}][weight][]" required>
+            <input type="number" name="exercises[${exerciseIndex}][reps][]" required>
             <button type="button" class="delete-btn">מחק תרגיל</button>
          </div>
       `
 
-      setDiv.appendChild(setRow);
+      exercise.appendChild(setRow);
    });
 
    setDiv.addEventListener("click", (e) =>{

@@ -22,7 +22,7 @@ app.set("views", "./frontend");
 
 app.use(express.json());
 app.use(express.static("./frontend/public"));
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended: true}));
 
 app.use("", router);
 

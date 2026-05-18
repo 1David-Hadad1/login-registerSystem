@@ -29,3 +29,27 @@ module.exports.createWorkout = async (req, res) =>{
 
    workout.save();
 };
+
+module.exports.finishWorkout = async (req, res) => {
+   const updatedExercises = [];
+
+   req.body.exercises.forEach(exercise => {
+      const sets = [];
+
+      for (let i = 0; i < exercise.weight.length; i++) {
+         sets.push({
+            weight: exercise.weight[i],
+            reps: exercise.reps[i]
+         });
+      };
+
+      updatedExercises.push({
+         name: exercise.name[0],
+         sets: sets
+      })
+   });
+
+   const workoutData = await workoutSchema.findById(req.params.id);
+   workoutData.exercises = updatedExercises;
+   await workoutData.save();
+};
