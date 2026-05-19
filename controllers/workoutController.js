@@ -11,12 +11,7 @@ module.exports.createWorkout = async (req, res) =>{
       exercises.push({
          name: req.body.exerciseName[i],
 
-         sets: [
-            {
-               weight: req.body.weight[i],
-               reps: req.body.reps[i]
-            }
-         ]
+         sets: []
       });
    }
 
@@ -30,18 +25,20 @@ module.exports.createWorkout = async (req, res) =>{
    workout.save();
 };
 
-module.exports.finishWorkout = async (req, res) => {   
+module.exports.saveWorkout = async (req, res) => {   
    const updatedExercises = [];
 
    req.body.exercises.forEach(exercise => {
       const sets = [];
 
-      for (let i = 0; i < exercise.weight.length; i++) {
-         sets.push({
-            weight: exercise.weight[i],
-            reps: exercise.reps[i]
-         });
-      };
+      if(exercise.weight){
+         for (let i = 0; i < exercise.weight.length; i++) {
+            sets.push({
+               weight: exercise.weight[i],
+               reps: exercise.reps[i]
+            });
+         };
+      }
 
       updatedExercises.push({
          name: exercise.name,

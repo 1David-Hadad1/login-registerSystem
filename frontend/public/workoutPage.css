@@ -5,6 +5,10 @@
 #This-Body{
    padding-top: 50px;
    direction: rtl;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   justify-content: center;
 }
 
 .workoutCon{
@@ -13,7 +17,7 @@
    justify-content: center;
    flex-direction: column;
    width: 100vw;
-   gap: 15px;
+   gap: 10px;
 }
 .exerciesCon{
    display: flex;
@@ -59,12 +63,25 @@
    padding: 4px 25px;
    font-size: 16px;
 }
-.endWorkoutBtn{
-   margin-bottom: 20px;
+.saveWorkoutBtn{
+   margin-bottom: 10px;
    background-color: rgba(87, 121, 255, 0.7);
-   width: 250px;
+   width: 300px;
    height: 30px;
    font-size: 16px;
    border: 2px solid black;
    font-weight: bold;
+}
+.endWorkoutBtn{
+   margin-bottom: 20px;
+   background-color: rgba(87, 121, 255, 0.7);
+   width: 300px;
+   height: 30px;
+   font-size: 16px;
+   border: 2px solid black;
+   font-weight: bold;
+}
+.saveWorkoutBtn:hover, .endWorkoutBtn:hover, .addSetBtn:hover{
+   cursor: pointer;
+   background-color: rgba(87, 121, 255, 0.4);
 }

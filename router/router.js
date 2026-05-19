@@ -73,8 +73,8 @@ router.post("/createWorkout", pagesAuth, async (req, res)=>{
    res.redirect("/");
 });
 
-router.post("/Finish-Workout/:id", async (req,res)=>{
-   workoutController.finishWorkout(req, res);
+router.post("/Save-Workout/:id", async (req,res)=>{
+   workoutController.saveWorkout(req, res);
    res.redirect("/");
 });
 

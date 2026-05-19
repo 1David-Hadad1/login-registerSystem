@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
 
-const workoutSchema = new mongoose.Schema({
+const wHistorySchema = new mongoose.Schema({
    userID: String,
+   workoutID: String,
    title: String,
 
    exercises: [
@@ -19,4 +20,4 @@ const workoutSchema = new mongoose.Schema({
    ]
 });
 
-module.exports = mongoose.model("workout", workoutSchema);
+module.exports = mongoose.model("workoutHistory", wHistorySchema);
