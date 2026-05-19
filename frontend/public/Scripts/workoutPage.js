@@ -12,9 +12,11 @@ addSetBtn.forEach(btn => {
       const exerciseIndex = exercise.dataset.index;
       
       setRow.innerHTML += `
+         <p>משקל:</p>
          <input type="number" name="exercises[${exerciseIndex}][weight][]" required>
+         <p>חזרות:</p>
          <input type="number" name="exercises[${exerciseIndex}][reps][]" required>
-         <button type="button" class="delete-btn">מחק תרגיל</button>
+         <button type="button" class="delete-btn">מחק</button>
       `
 
       setDiv.appendChild(setRow);

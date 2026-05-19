@@ -4,6 +4,7 @@
 }
 #This-Body{
    padding-top: 50px;
+   direction: rtl;
 }
 
 .workoutCon{
@@ -29,12 +30,41 @@
    justify-content: space-between;
 }
 .sets div input{
-   width: 80px;
+   width: 50px;
+   height: 30px;
+   font-size: 16px;
    text-align: center;
 }
 .sets div{
    display: flex;
    align-items: center;
    gap: 5px;
+   width: 200px;
+}
+.delete-btn{
+   color: black;
+   border: 1px solid red;
+   background-color: rgba(255, 0, 0, 0.8);
+   font-weight: bold;
+   padding: 6px 10px;
+}
+.set-row p{
+   font-weight: bold;
+   color: rgba(0, 0, 0, 0.6);
+}
+.addSetBtn{
+   background-color: rgba(87, 121, 255, 0.7);
+   border: 1px solid black;
+   color: black;
+   padding: 4px 25px;
+   font-size: 16px;
+}
+.endWorkoutBtn{
+   margin-bottom: 20px;
+   background-color: rgba(87, 121, 255, 0.7);
    width: 250px;
+   height: 30px;
+   font-size: 16px;
+   border: 2px solid black;
+   font-weight: bold;
 }

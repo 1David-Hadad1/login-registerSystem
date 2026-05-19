@@ -29,7 +29,9 @@
                      <% exercise.sets.forEach((set, setIndex) => { %>
 
                         <div class="set-row">
+                           <p>משקל:</p>
                            <input type="number" name="exercises[<%= exerciseIndex %>][weight][]" value="<%= set.weight %>" required>
+                           <p>חזרות:</p>
                            <input type="number" name="exercises[<%= exerciseIndex %>][reps][]" value="<%= set.reps %>" required>
                         </div>             
                         
@@ -43,7 +45,7 @@
 
             <% }) %>
 
-         <input type="submit" value="סיים אימון">
+            <input class="endWorkoutBtn" type="submit" value="סיים אימון">
          </form>
       </div>
 
