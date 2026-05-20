@@ -1,4 +1,5 @@
 const workoutSchema = require("../models/workoutSchema");
+const wHistorySchema = require("../models/wHistorySchema");
 
 module.exports.createWorkout = async (req, res) =>{   
    if(!req.body.exerciseName){
@@ -26,6 +27,8 @@ module.exports.createWorkout = async (req, res) =>{
 };
 
 module.exports.saveWorkout = async (req, res) => {   
+   console.log(req.body.endWorkout);
+   
    const updatedExercises = [];
 
    req.body.exercises.forEach(exercise => {
@@ -49,4 +52,30 @@ module.exports.saveWorkout = async (req, res) => {
    const workoutData = await workoutSchema.findById(req.params.id);
    workoutData.exercises = updatedExercises;
    await workoutData.save();
+
+   const isEnding = req.body.endWorkout === "true";
+
+   if(isEnding){
+      console.log("the end workout are running");
+      
+      const thisWorkout = await workoutSchema.findById(req.params.id)      
+
+      const newHistroyWorkout = new wHistorySchema({
+         userID: req.session.user._id,
+         workoutID: req.params.id,
+         title: thisWorkout.title,
+
+         exercises: thisWorkout.exercises
+      });
+
+      await newHistroyWorkout.save().then( async () =>{
+         thisWorkout.exercises.forEach(exercise =>{
+            exercise.sets = [];
+         });
+
+         await thisWorkout.save();
+      });
+   }
+
+   res.redirect("/workout/" + req.params.id);
 };

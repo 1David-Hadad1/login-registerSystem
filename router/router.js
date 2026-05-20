@@ -11,6 +11,7 @@ const session = require("express-session");
 
 const userSchema = require("../models/userSchema");
 const workoutSchema = require("../models/workoutSchema");
+const woHistorySchema = require("../models/wHistorySchema");
 
 router.get("/", pagesAuth, (req, res)=>{
    const user = req.session.user;
@@ -75,7 +76,6 @@ router.post("/createWorkout", pagesAuth, async (req, res)=>{
 
 router.post("/Save-Workout/:id", async (req,res)=>{
    workoutController.saveWorkout(req, res);
-   res.redirect("/");
 });
 
 module.exports = router;

@@ -28,3 +28,14 @@ addSetBtn.forEach(btn => {
       }
    });
 });
+
+function setSaveMode() {
+   document.getElementById("endWorkoutFlag").value = "false";
+}
+
+function endWorkout() {
+   if(confirm("האם אתה בטוח שאתה רוצה לסיים את האימון?")){
+      document.getElementById("endWorkoutFlag").value = "true";
+      document.getElementById('workoutForm').submit();
+   }
+}

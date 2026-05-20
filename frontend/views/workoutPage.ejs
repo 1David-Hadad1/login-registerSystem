@@ -13,7 +13,7 @@
 
       <div id="This-Body">
 
-         <form class="workoutCon" action="/Save-Workout/<%= workout._id %>" method="post">
+         <form class="workoutCon" id="workoutForm" action="/Save-Workout/<%= workout._id %>" method="post">
 
             <h1><%= workout.title %></h1>
             
@@ -46,12 +46,12 @@
 
             <% }) %>
 
-            <input class="saveWorkoutBtn" type="submit" value="שמור אימון">
+            <input type="hidden" id="endWorkoutFlag" name="endWorkout" value="false">
+            <input class="saveWorkoutBtn" type="submit" onclick="setSaveMode()" value="שמור אימון">
          </form>
 
-         <form action="/endWorkout/<%= workout.id %>" method="post">
-            <input class="endWorkoutBtn" type="submit" onclick="confirm('אתה בטוח שאתה רוצה לסיים את האימון?')" value="סיים אימון">
-         </form>
+         <input class="endWorkoutBtn" type="button" onclick="endWorkout()" value="סיים אימון">
+
       </div>
 
       <script src="/Scripts/workoutPage.js"></script>
