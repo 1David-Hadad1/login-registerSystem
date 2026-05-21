@@ -19,9 +19,16 @@
             <% } %>
 
             <% workouts.forEach(workout => { %>
-               <a href="/workout/<%= workout._id %>">
-                  <h1><%= workout.title %></h1>
-               </a>
+               <div class="workoutTitle">
+
+                  <a class="workoutTitletext" href="/workout/<%= workout._id %>"><h1><%= workout.title %></h1></a>
+
+                  <div class="workoutOptionsBtns">
+                     <a href="/editWorkout/<%= workout.id %>">Edit</a>
+                     <a href="/delWorkout/<%= workout.id %>">Del</a>
+                  </div>
+
+               </div>
             <% }) %>
 
          </div>

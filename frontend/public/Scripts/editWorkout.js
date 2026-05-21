@@ -1,5 +1,4 @@
 const exerciseCon = document.getElementById('exercise-con');
-console.log("this script is runing!");
 
 document.getElementById('addExercise').addEventListener("click", () =>{   
    const createRow = document.createElement("div");

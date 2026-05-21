@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Edit Workout || <%= workout.title %></title>
+
+   <link rel="stylesheet" href="/CreateWorkout.css">
+   <link rel="stylesheet" href="/Parts/Header/Header.css">
+</head>
+
+<body>
+   <%- include('./Parts/Header/Header.ejs') %>
+
+      <div id="This-Body">
+         
+         <form class="workoutCreationCon" action="/editWorkout/<%= workout.id %>" method="post">
+            <input class="workouttitle" type="text" name="title" placeholder="שם האימון" value="<%= workout.title %>">
+
+            <div id="exercise-con">
+               <% workout.exercises.forEach(exercise => { %>
+                  <div class="Exercise">
+                     <input class="exerciseName" type="text" name="exerciseName[]" value="<%= exercise.name %>" placeholder="שם של התרגיל">
+                     <button type="button" class="delete-btn">מחק תרגיל</button>
+                  </div>
+               <% }) %>
+            </div>
+
+            <input type="button" value="הוספת תרגיל" id="addExercise">
+            <input type="submit" value="ערוך אימון" id="createWorkoutBtn">
+
+         </form>
+
+      </div>
+
+      <script src="/Scripts/editWorkout.js"></script>
+</body>
+</html>

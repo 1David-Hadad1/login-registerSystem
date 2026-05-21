@@ -3,6 +3,7 @@ const router = express.Router();
 
 const userController = require("../controllers/userController");
 const workoutController = require("../controllers/workoutController");
+const editWorkoutController = require("../controllers/editWorkoutController");
 
 const pagesAuth = require("../middleware/pagesAuth");
 const adminAuth = require("../middleware/adminAuth");
@@ -50,6 +51,12 @@ router.get("/startWorkout", pagesAuth, async (req, res)=>{
    res.render("../frontend/views/startWorkout.ejs", {workouts, user});
 });
 
+router.get("/editWorkout/:id",pagesAuth, async (req,res)=>{
+   const workout = await workoutSchema.findById(req.params.id);   
+   const user = req.session.user;
+   res.render("../frontend/views/editWorkout.ejs", {workout, user});
+});
+
 router.get("/workout/:id", pagesAuth, async (req,res)=>{
    const workout = await workoutSchema.findById(req.params.id);   
    const user = req.session.user;
@@ -76,6 +83,10 @@ router.post("/createWorkout", pagesAuth, async (req, res)=>{
 
 router.post("/Save-Workout/:id", async (req,res)=>{
    workoutController.saveWorkout(req, res);
+});
+
+router.post("/editWorkout/:id", async (req,res)=>{
+   editWorkoutController.editWorkout(req, res);
 });
 
 module.exports = router;

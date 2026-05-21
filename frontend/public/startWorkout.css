@@ -3,31 +3,38 @@
    font-family: Arial, Helvetica, sans-serif;
 }
 #This-Body{
+   padding-top: 45px;
    width: 100vw;
    height: 100vh;
    display: flex;
-   align-items: center;
-   justify-content: center;
    flex-direction: column;
    touch-action: none;
    overflow: none;
+   direction: rtl;
 }
-.workouts-titles-con{
+.workoutTitle{
    display: flex;
    align-items: center;
    justify-content: space-between;
-   flex-direction: column;
+   border-bottom: 2px solid black;
+   height: 60px;
 }
-.workouts-titles-con{
-   text-align: center;
-   width: 100vw;
-}
-.workouts-titles-con a:hover{
-   background-color: rgba(0, 0, 0, 0.05);
-}
-.workouts-titles-con a{
+.workoutTitle .workoutTitletext{
+   padding-right: 25px;
+   color: black;
    text-decoration: none;
+}
+.workoutOptionsBtns{
+   margin-left: 25px;
+   display: flex;
+   align-items: center;
+   gap: 15px;
+}
+.workoutOptionsBtns a{
    color: white;
-   padding: 10px;
-   width: 100%;
+   text-decoration: none;
+   background-color: rgba(0, 0, 0, 0.4);
+   text-align: center;
+   font-size: 14px;
+   padding: 8px 15px;
 }
