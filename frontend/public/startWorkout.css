@@ -20,15 +20,16 @@
    padding: 15px 0;
 }
 .workoutTitle .workoutTitletext{
-   padding-right: 25px;
+   padding-right: 20px;
    color: black;
    text-decoration: none;
+   font-size: 13px;
 }
 .workoutOptionsBtns{
-   margin-left: 25px;
+   margin-left: 20px;
    display: flex;
    align-items: center;
-   gap: 15px;
+   gap: 10px;
 }
 .workoutOptionsBtns a{
    color: white;
